@@ -11,7 +11,7 @@ Discrete:
 	* Parameters: p, probability of success in a trial.
 
     - Binomial
-        * Number of successes out of a known number of trials, each with a probability of success.
+        * Number of successes out of a known number of trials, each with a fixed probability of success.
 	* Parameters: p, probability of success, n, number of trials.
 
     - Poisson
@@ -19,7 +19,7 @@ Discrete:
         * Parameters: lambda: rate of event occurance.
 
     - Geometric
-        * Number of trials until the fist success in a (potentially infinite) sequence of bernoulli trials.
+        * Number of trials until the first success in a (potentially infinite) sequence of bernoulli trials.
 	* Parameters: p, probability of success in a trial.
 
 Continuous:
