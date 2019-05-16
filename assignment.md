@@ -1,43 +1,6 @@
-## Part 0: Quick Review of Distributions
+# Random Variables and Their Distributions
 
-The following is a short review of common distributions and their parameters.
-
-
-```
-Discrete:
-
-    - Bernoulli
-        * One instance of a success or failure in a trial with a fixed probability of success.
-	* Parameters: p, probability of success in a trial.
-
-    - Binomial
-        * Number of successes out of a known number of trials, each with a fixed probability of success.
-	* Parameters: p, probability of success, n, number of trials.
-
-    - Poisson
-        * Count of the number of events occuring in a fixed interval of time (or volume of space), where each event occurs at a fixed rate.
-        * Parameters: lambda: rate of event occurance.
-
-    - Geometric
-        * Number of trials until the first success in a (potentially infinite) sequence of bernoulli trials.
-	* Parameters: p, probability of success in a trial.
-
-Continuous:
-
-    - Exponential
-        * Time (or space) between two subsequent poisson distributed events.
-	* Parameters: lambda: rate of event occurance.
-
-    - Uniform
-        * All values are equally likely.
-        * Parameters: a, b: endpoints of interval supporting the distribution.
-
-    - Gaussian a.k.a Normal
-        * Distribution shaped like a bell curve with very quickly decaying tails.  Commonly occuring due to the Central Limit Theorem.
-	* Parameters: mu, expectation, sigma, standard deviation.
-
-```
-
+In this assignment, we will work with some common probability distributions.
 
 ## Part 1: Identifying Distributions
 
@@ -60,59 +23,35 @@ For each question:
   P(X = 15) = 0.144
   ``` 
   
-  or 
-  
-  ```
-  E(X) = 15
-  ```
-  
-  You may calculate these probabilities either by hand (with an assist form wikipedia to look up the PMF or CDF), or use python:
+  You may calculate these probabilities either by hand (with an assist from wikipedia to look up the PMF or CDF), or use python:
 
   ```
   import scipy.stats as stats
-  dist = stats.binomial(n=30, p=0.5)
-  print("P(X = 15) = ", dist.pmf(15)
+  dist = stats.binom(n=30, p=0.5)
+  print("P(X = 15) = ", dist.pmf(15))
   ```
 
 <br>
 
-1. A typist makes on average 2 mistakes per page.
+1. A typist makes on average 2 mistakes per page.  What is the probability of a particular page having no errors on it?
 
-   What is the probability of a particular page having no errors on it?
+2. Components are packed in boxes of 20. The probability of any individual component being
+   defective is 0.1. What is the probability of a box containing exactly 2 defective components?
 
+3. Components are packed in boxes of 20. The probability of any individual component being
+   defective is 0.1. What is the probability of a box containing AT MOST 2 defective components?
 
-2. Components are packed in boxes of 20. The probability of a component being
-   defective is 0.1.
+4. Patrons arrive at a local bar at a rate of 30 per hour. What is the probability that the bouncer can take a three minute bathroom break without missing the next patron? 
 
-   What is the probability of a box containing 2 defective components?
+5. You need to find a tall person, at least 6 feet tall, to help you reach a cookie jar. 8% of the population is 6 feet or taller, and people pass by on average twice per minute.  If you wait on the sidewalk, what is the probability that you will have to wait longer than ten minutes to get some cookies?
 
+6. A harried passenger will be several minutes late for a scheduled 10 A.M. flight to NYC. Nevertheless, he might still make the flight, since boarding is always allowed until 10:10 A.M., and boarding is sometimes permitted up to 10:30 AM.
 
-3. Patrons arrive at a local bar at a mean rate of 30 per hour.
+Assuming the end time of the boarding interval is **uniformly distributed** over the above limits, find the probability that the passenger will make his flight, assuming he arrives at the boarding gate at 10:25.
 
-   What is the probability that the bouncer has to wait more than 3 minutes to card the
-   next patron?
+7. Your cat starts to beg for dinner at 3:30 every day, and you suspect that it meows at a fixed rate.  You've observed that about one fifth of the time, your cat will not meow until 3:40, giving you ten unexpected minuets of quiet.  What is the probability Your cat leaves you alone until 4:00?
 
-
-4. You need to find a tall person, at least 6 feet tall, to help you reach
-   a cookie jar. 8% of the population is 6 feet or taller.
-
-   If you wait on the sidewalk, how many people would you expect to have passed
-   you by before you'd have a candidate to reach the jar?
-
-
-5. A harried passenger will be several minutes late for a scheduled 10 A.M.
-   flight to NYC. Nevertheless, he might still make the flight, since boarding
-   is always allowed until 10:10 A.M., and boarding is sometimes
-   permitted up to 10:30 AM.
-
-   Assuming the end time of the boarding interval is **uniformly distributed** over the above
-   limits, find the probability that the passenger will make his flight,
-   assuming he arrives at the boarding gate at 10:25.
-
-6. Your cat starts to beg for dinner at 3:30 every day, and you suspect that it
-   meows at a fixed rate.  You've observed that about one fifth of the time, your
-   cat will not meow until 3:40, giving you ten unexpected minuets of quiet.  What
-   is the probability Your cat leaves you alone until 4:00?
+8. Somehow you ended up with two types of forks.  There are the good forks, which are big and fit a healthy bite, but there are also these small, thin ones that you don't really understand what they are for, you should probably just get rid of them.  You need two forks for you and your partner, and grab a fistful of 5.  If there are 14 forks in the drawer, of which half are the good kind, what is the probability you have at least your two required good forks.
 
 
 ## Part 2: Distribution Simulation
