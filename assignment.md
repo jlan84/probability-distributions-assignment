@@ -17,7 +17,7 @@ For each question:
   X ~ Binomial(n=30, p=0.5)
   ```
 
-- Use the pdf of the distribution to calculate the desired probability, e.g. 
+- Use the pdf/pmf of the distribution to calculate the desired probability, e.g. 
 
   ```
   P(X = 15) = 0.144
@@ -49,16 +49,16 @@ For each question:
 
 Assuming the end time of the boarding interval is **uniformly distributed** over the above limits, find the probability that the passenger will make his flight, assuming he arrives at the boarding gate at 10:25.
 
-7. Your cat starts to beg for dinner at 3:30 every day, and you suspect that it meows at a fixed rate.  You've observed that about one fifth of the time, your cat will not meow until 3:40, giving you ten unexpected minuets of quiet.  What is the probability Your cat leaves you alone until 4:00?
+7. Your cat starts to beg for dinner at 3:30 every day, and you suspect that it meows at a fixed rate.  You've observed that about one fifth of the time, your cat will not meow until 3:40, giving you ten unexpected minutes of quiet.  What is the probability your cat leaves you alone until 4:00?
 
-8. Somehow you ended up with two types of forks.  There are the good forks, which are big and fit a healthy bite, but there are also these small, thin ones that you don't really understand what they are for, you should probably just get rid of them.  You need two forks for you and your partner, and grab a fistful of 5.  If there are 14 forks in the drawer, of which half are the good kind, what is the probability you have at least your two required good forks.
+8. Somehow you ended up with two types of forks.  There are the good forks, which are big and fit a healthy bite, but there are also these small, thin ones that you don't really understand what they are for, you should probably just get rid of them.  You need two forks for you and your partner, and grab a fistful of 5.  If there are 14 forks in the drawer, of which half are the good kind, what is the probability you have at least your two required good forks?
 
 
 ## Part 2: Distribution Simulation
 
 Often times in real life applications, we can specify the values of a variable to be drawn from a particular distribution.
 For example the number of sales made in the next month can be modeled as a uniform distribution over the range of
-5000 and 6000 (the terminology here is that the number of sales is a *random variable*, and it's *distribution* is uniform).
+5000 and 6000 (the terminology here is that the number of sales is a *random variable*, and its *distribution* is uniform).
 
 In this scenario, we are modeling `profit` as a product of `number of views`, `conversion` and `profit per sale`,
 where `number of views`, `conversion` and `profit per sale` can be modeled as random variables.
@@ -68,10 +68,10 @@ based on the uncertainties in the other variables.
 `Profit = Number of views * Conversion * (Wholesale_Proportion * 50 +
 (1 - Wholesale_Proportion)*60)`
 
-The assumptions of out model is:
+The assumptions of our model are:
 
 - `Number of views` is a uniform distribution over the range of 5000 and 6000.
-- `Conversion` is a binomially distributed where the probability of success is `0.12` for each view. 
+- `Conversion` is binomially distributed where the probability of success is `0.12` for each view. 
 - `Profit per sale` has `0.2` probability of taking the value `50` (for wholesale) and `0.8` of
   taking the value `60` (non-wholesale) _for each sale_. You should be able to model both the number of wholesale sales and the number of non-wholesales sales as binomial distributions (but one of the parameters of this distribution is not fixed, it depends on an earlier random quantity).
   
