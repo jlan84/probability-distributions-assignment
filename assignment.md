@@ -17,12 +17,12 @@ For each question:
   X ~ Binomial(n=30, p=0.5)
   ```
 
-- Use the pdf/pmf of the distribution to calculate the desired probability, e.g. 
+- Use the pdf/pmf of the distribution to calculate the desired probability, e.g.
 
   ```
   P(X = 15) = 0.144
-  ``` 
-  
+  ```
+
   You may calculate these probabilities either by hand (with an assist from wikipedia to look up the PMF or CDF), or use python:
 
   ```
@@ -41,7 +41,7 @@ For each question:
 3. Components are packed in boxes of 20. The probability of any individual component being
    defective is 0.1. What is the probability of a box containing AT MOST 2 defective components?
 
-4. Patrons arrive at a local bar at a rate of 30 per hour. What is the probability that the bouncer can take a three minute bathroom break without missing the next patron? 
+4. Patrons arrive at a local bar at a rate of 30 per hour. What is the probability that the bouncer can take a three minute bathroom break without missing the next patron?
 
 5. You need to find a tall person, at least 6 feet tall, to help you reach a cookie jar. 8% of the population is 6 feet or taller, and people pass by on average twice per minute.  If you wait on the sidewalk, what is the probability that you will have to wait longer than ten minutes to get some cookies?
 
@@ -49,7 +49,7 @@ For each question:
 
 Assuming the end time of the boarding interval is **uniformly distributed** over the above limits, find the probability that the passenger will make his flight, assuming he arrives at the boarding gate at 10:25.
 
-7. Your cat starts to beg for dinner at 3:30 every day, and you suspect that it meows at a fixed rate.  You've observed that about one fifth of the time, your cat will not meow until 3:40, giving you ten unexpected minutes of quiet.  What is the probability your cat leaves you alone until 4:00?
+7. Your cat starts to beg for dinner at 3:30 every day, and you suspect that it meows at a fixed rate. You've observed that about one fifth of the time your cat will not meow until 3:40, giving you 10 unexpected minutes of quiet. What is the probability your cat leaves you alone for 30 minutes?
 
 8. Somehow you ended up with two types of forks.  There are the good forks, which are big and fit a healthy bite, but there are also these small, thin ones that you don't really understand what they are for, you should probably just get rid of them.  You need two forks for you and your partner, and grab a fistful of 5.  If there are 14 forks in the drawer, of which half are the good kind, what is the probability you have at least your two required good forks?
 
@@ -71,10 +71,9 @@ based on the uncertainties in the other variables.
 The assumptions of our model are:
 
 - `Number of views` is a uniform distribution over the range of 5000 and 6000.
-- `Conversion` is binomially distributed where the probability of success is `0.12` for each view. 
-- `Profit per sale` has `0.2` probability of taking the value `50` (for wholesale) and `0.8` of
-  taking the value `60` (non-wholesale) _for each sale_. You should be able to model both the number of wholesale sales and the number of non-wholesales sales as binomial distributions (but one of the parameters of this distribution is not fixed, it depends on an earlier random quantity).
-  
+- `Conversion` is binomially distributed where the probability of success is `0.12` for each view.
+- Profit per sale can take on two values: 50 for wholesale and 60 for non-wholesale. There is a 0.2 probability of a sale being wholesale and 0.8 probability of being non-wholesale. You should be able to model both the number of wholesale sales and the number of non-wholesales sales as binomial distributions (but one of the parameters of this distribution is not fixed, it depends on an earlier random quantity).
+
 1. Given the distributions of each of variables, use `scipy` to write a function that would draw random values from each of the
    distributions to simulate draws from the distribution of `profit`
 
